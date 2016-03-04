@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('trello-notifications', {
+      category: 'input',
+      color: '#a6bbcf',
+      defaults: {
+        trello: {value:'', type:'trello-credentials', required:true}
+      },
+      inputs: 0,
+      outputs: 1,
+      icon: "file.png",
+      label: function() {
+          return this.name || "add Card";
+      }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="trello-notifications">
+    <div class="form-row">
+      <label for="node-input-trello">Trello</label>
+      <input id="node-input-trello"></input>
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="trello-add-card">
+    <p>A node to get a list boards</p>
+</script>

@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    RED.nodes.registerType('trello-add-card', {
+      category: 'input',
+      color: '#a6bbcf',
+      defaults: {
+        trello: {value:'', type:'trello-credentials', required:true},
+        name: {value: ''},
+        desc: {value: ''},
+        pos: {value: 'bottom'},
+        due: {value: null},
+        idList: {value: '', required: true},
+        idMembers: {value: ''},
+        idLabels: {value: ''}
+      },
+      inputs:1,
+      outputs:1,
+      icon: "file.png",
+      label: function() {
+          return this.name || "add Card";
+      }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="trello-add-card">
+    <div class="form-row">
+      <label for="node-input-trello">Trello</label>
+      <input id="node-input-trello"></input>
+    </div>
+    <div class="form-row">
+      <label for="node-input-idList">List ID</label>
+      <input type="text" id="node-input-idList">
+    </div>
+    <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+      <label for="node-input-description">Description</label>
+      <input type="text" id="node-input-description">
+    </div>
+    <div class="form-row">
+      <label for="node-input-pos">Position</label>
+      <input type="text" id="node-input-pos">
+    </div>
+    <div class="form-row">
+      <label for="node-input-due">Due</label>
+      <input type="text" id="node-input-due">
+    </div>
+    <div class="form-row">
+      <label for="node-input-idMembers">Members</label>
+      <input type="text" id="node-input-idMembers">
+    </div>
+    <div class="form-row">
+      <label for="node-input-idLabels">Labels</label>
+      <input type="text" id="node-input-idLabels">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="trello-add-card">
+    <p>A node to get a list boards</p>
+</script>
