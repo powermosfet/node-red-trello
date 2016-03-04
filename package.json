@@ -16,8 +16,7 @@
   "node-red": {
     "nodes": {
       "trello-credentials": "trello/80_trello_credentials.js",
-      "trello-add-card": "trello/81_trello-add-card.js",
-      "trello-notifications": "trello/82_trello-notifications.js"
+      "trello-add-card": "trello/81_trello-add-card.js"
     }
   },
   "author": {
