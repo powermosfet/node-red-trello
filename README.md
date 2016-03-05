@@ -1,3 +1,13 @@
-This is a toolset of nodes for node-red and trello.
+node-red-contrib-trello
+=======================
 
-This is an early development state. Currently you can only add a new card. Feel free to contrib :)
+A set of input and output nodes for connecting node-red to trello.
+
+## Install via NPM
+```
+npm install node-red-contrib-trello
+```
+
+## Current Development State
+
+Currently there is only a "add Card" node. Feel free to contrib more functionality
