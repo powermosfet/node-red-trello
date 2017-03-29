@@ -12,7 +12,7 @@ module.exports = function (RED) {
       var idChecklist = config.idChecklist
       msg.trello = msg.trello || {}
       var sendData = {}
-      sendData.name = msg.trello.name ? msg.trello.name : config.name
+      sendData.name = msg.trello.name ? msg.trello.name : config.itemName
       sendData.pos = msg.trello.pos ? msg.trello.pos : config.pos
       sendData.checked = msg.trello.checked ? msg.trello.checked : config.checked
       trello.post(

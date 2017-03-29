@@ -4,16 +4,17 @@
       color: '#8BBDD9',
       defaults: {
         trello: {value:'', type:'trello-credentials', required:true},
-        name: {value: '', required: true},
+        nodeName: {value: ''},
+        itemName: {value: ''},
         pos: {value: 'bottom'},
-        idChecklist: {value: '', required: true},
+        idChecklist: {value: ''},
         checked: {value: false},
       },
       inputs:1,
       outputs:1,
       icon: "trello.png",
       label: function() {
-          return this.name || "add Checkitem";
+          return this.nodeName || "add checkitem";
       },
       paletteLabel: "add checkitem"
     });
@@ -29,8 +30,12 @@
       <input type="text" id="node-input-idChecklist">
     </div>
     <div class="form-row">
-      <label for="node-input-name">Name</label>
-      <input type="text" id="node-input-name">
+      <label for="node-input-nodeName">Node name</label>
+      <input type="text" id="node-input-nodeName">
+    </div>
+    <div class="form-row">
+      <label for="node-input-itemName">Checkitem name</label>
+      <input type="text" id="node-input-itemName">
     </div>
     <div class="form-row">
       <label for="node-input-pos">Position</label>
@@ -43,5 +48,5 @@
 </script>
 
 <script type="text/x-red" data-help-name="trello-add-checkitem">
-    <p>A node to add a checkitem to a checklist</p>
+    <p>Add a checkitem to a checklist. Properties are taken from msg.trello</p>
 </script>
