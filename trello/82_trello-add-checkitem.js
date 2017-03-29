@@ -11,10 +11,11 @@ module.exports = function (RED) {
     this.on('input', function (msg) {
       var idChecklist = config.idChecklist
       msg.trello = msg.trello || {}
-      var sendData = {}
-      sendData.name = msg.trello.name ? msg.trello.name : config.itemName
-      sendData.pos = msg.trello.pos ? msg.trello.pos : config.pos
-      sendData.checked = msg.trello.checked ? msg.trello.checked : config.checked
+      var sendData = {
+        name:    msg.trello.name    || config.itemName,
+        pos:     msg.trello.pos     || config.pos,
+        checked: msg.trello.checked || config.checked
+      }
       trello.post(
         '/1/checklists/' + idChecklist + '/checkItems',
         sendData,
