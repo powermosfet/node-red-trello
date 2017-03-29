@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('trello-add-card', {
-      category: 'input',
+      category: 'output',
       color: '#8BBDD9',
       defaults: {
         trello: {value:'', type:'trello-credentials', required:true},
@@ -17,7 +17,8 @@
       icon: "trello.png",
       label: function() {
           return this.name || "add Card";
-      }
+      },
+      paletteLabel: "add card"
     });
 </script>
 
