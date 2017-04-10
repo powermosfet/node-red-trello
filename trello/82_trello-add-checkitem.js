@@ -1,7 +1,7 @@
 var Trello = require('node-trello')
 
 module.exports = function (RED) {
-  function TrelloAddCardNode (config) {
+  function TrelloAddCheckitemNode (config) {
     RED.nodes.createNode(this, config)
     var node = this
 
@@ -9,18 +9,15 @@ module.exports = function (RED) {
     var credentialNode = RED.nodes.getNode(config.trello)
     var trello = new Trello(credentialNode.apikey, credentialNode.secret)
     this.on('input', function (msg) {
+      var idChecklist = config.idChecklist
       var trelloData = msg.trello || {}
       var sendData = {
         name: trelloData.name || config.name,
-        desc: trelloData.desc || config.desc,
-        idList: trelloData.idList || config.idList,
         pos: trelloData.pos || config.pos,
-        due: trelloData.due || config.due,
-        idMembers: trelloData.idMembers || config.idMembers,
-        idLabels: trelloData.idLabels || config.idLabels
+        checked: trelloData.checked || config.checked
       }
       trello.post(
-        '/1/cards',
+        '/1/checklists/' + idChecklist + '/checkItems',
         sendData,
         (err, data) => {
           if (err) { node.error(err) }
@@ -29,5 +26,5 @@ module.exports = function (RED) {
       )
     })
   }
-  RED.nodes.registerType('trello-add-card', TrelloAddCardNode)
+  RED.nodes.registerType('trello-add-checkitem', TrelloAddCheckitemNode)
 }

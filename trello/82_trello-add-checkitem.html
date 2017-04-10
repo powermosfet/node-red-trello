@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('trello-add-checkitem', {
+      category: 'input',
+      color: '#a6bbcf',
+      defaults: {
+        trello: {value:'', type:'trello-credentials', required:true},
+        name: {value: '', required: true},
+        pos: {value: 'bottom'},
+        idChecklist: {value: '', required: true},
+        checked: {value: false},
+      },
+      inputs:1,
+      outputs:1,
+      icon: "file.png",
+      label: function() {
+          return this.name || "add Checkitem";
+      }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="trello-add-checkitem">
+    <div class="form-row">
+      <label for="node-input-trello">Trello</label>
+      <input id="node-input-trello"></input>
+    </div>
+    <div class="form-row">
+      <label for="node-input-idList">Checklist ID</label>
+      <input type="text" id="node-input-idChecklist">
+    </div>
+    <div class="form-row">
+      <label for="node-input-name">Name</label>
+      <input type="text" id="node-input-name">
+    </div>
+    <div class="form-row">
+      <label for="node-input-pos">Position</label>
+      <input type="text" id="node-input-pos">
+    </div>
+    <div class="form-row">
+      <label for="node-input-checked">Checked</label>
+      <input type="text" id="node-input-checked">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="trello-add-checkitem">
+    <p>A node to add a checkitem to a checklist</p>
+</script>
