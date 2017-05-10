@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('trello-add-checkitem', {
-      category: 'input',
-      color: '#a6bbcf',
+      category: 'output',
+      color: '#8BBDD9',
       defaults: {
         trello: {value:'', type:'trello-credentials', required:true},
         name: {value: '', required: true},
@@ -11,10 +11,11 @@
       },
       inputs:1,
       outputs:1,
-      icon: "file.png",
+      icon: "trello.png",
       label: function() {
           return this.name || "add Checkitem";
-      }
+      },
+      paletteLabel: "add checkitem"
     });
 </script>
 
