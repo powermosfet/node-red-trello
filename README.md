@@ -10,4 +10,11 @@ npm install node-red-contrib-trello
 
 ## Current Development State
 
-Currently there is only "add Card" and "add Checkitem" nodes. Feel free to contrib more functionality
+Currently there are only some functions from the [API](https://developers.trello.com/advanced-reference) are implemented.
+
+Following functions are available:
+
+* add card
+* add checklist item
+* get list informations
+* get cards of list

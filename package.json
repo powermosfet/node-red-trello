@@ -22,9 +22,13 @@
       "trello-get-list-cards": "trello/84_trello-get-list-cards.js"
     }
   },
+  "repository": {
+    "type" : "git"
+  , "url" : "https://github.com/oliverlorenz/node-red-trello.git"
+  },
   "author": {
     "name": "Oliver Lorenz",
     "email": "mail@oliverlorenz.com",
-    "url": "https://github.com/oliverlorenz"
+    "url": "https://oliverlorenz.com"
   }
 }
