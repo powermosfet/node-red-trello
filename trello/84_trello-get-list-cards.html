@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('trello-get-list-cards', {
+      category: 'output',
+      color: '#8BBDD9',
+      defaults: {
+        trello: {value:'', type:'trello-credentials', required:true},
+        idList: {value: '', required: true},
+      },
+      inputs:1,
+      outputs:1,
+      icon: "trello.png",
+      label: function() {
+          return this.name || "get cards of list";
+      },
+      paletteLabel: "get cards of list"
+    });
+</script>
+
+<script type="text/x-red" data-template-name="trello-get-list-cards">
+    <div class="form-row">
+      <label for="node-input-trello">Trello</label>
+      <input id="node-input-trello"></input>
+    </div>
+    <div class="form-row">
+      <label for="node-input-idList">List ID</label>
+      <input type="text" id="node-input-idList">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="trello-get-list-cards">
+    <p>A node to get a list boards</p>
+</script>

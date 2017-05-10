@@ -17,7 +17,9 @@
     "nodes": {
       "trello-credentials": "trello/80_trello_credentials.js",
       "trello-add-card": "trello/81_trello-add-card.js",
-      "trello-add-checkitem": "trello/82_trello-add-checkitem.js"
+      "trello-add-checkitem": "trello/82_trello-add-checkitem.js",
+      "trello-get-list": "trello/83_trello-get-list.js",
+      "trello-get-list-cards": "trello/84_trello-get-list-cards.js"
     }
   },
   "author": {
